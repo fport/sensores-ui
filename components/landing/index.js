@@ -5,7 +5,7 @@ export default function Landing() {
     return (
         <Card>
             <div className='flex flex-col ai-between justify-between w-full h-full'>
-                <p className="text-center mt-10">If you're ready, let's get started⚡️</p>
+                <p className="text-center grow-0 my-10">If you're ready, let's get started⚡️</p>
                 <Link href='/create'>
                     <button className="btn gap-2 text-success-content">
                         <svg
