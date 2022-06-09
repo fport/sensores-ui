@@ -1,6 +1,6 @@
 import { useState } from 'react';
-import Stepper from '@c/Stepper'
-import Card from '@c/Card'
+import Stepper from '@c/stepper'
+import Card from '@c/card'
 import { SelectStep } from './components'
 
 export default function MapInfo() {
