@@ -15,15 +15,14 @@ export default function ResultTable() {
                     <tbody>
                         <tr>
                             <th>1</th>
-                            <td>Cy Ganderton</td>
-                            <td>Quality Control Specialist</td>
-                            <td>Blue</td>
+                            <td>Smoke</td>
+                            <td>2 , 5</td>
+                            <td>10</td>
                             <td>
                                 <div className="dropdown dropdown-hover">
                                     <label tabIndex={0} className="btn m-1">Hover</label>
                                     <ul tabIndex={0} className="dropdown-content menu p-2 shadow bg-base-100 rounded-box w-52">
-                                        <li><a>Item 1</a></li>
-                                        <li><a>Item 2</a></li>
+                                        <li><a>Delete</a></li>
                                     </ul>
                                 </div>
                             </td>
@@ -31,46 +30,42 @@ export default function ResultTable() {
                         {/* row 2 */}
                         <tr>
                             <th>2</th>
-                            <td>Hart Hagerty</td>
-                            <td>Desktop Support Technician</td>
-                            <td>Purple</td>
+                            <td>CO2</td>
+                            <td>5 , 1</td>
+                            <td>10</td>
                             <td>
                                 <div className="dropdown dropdown-hover">
                                     <label tabIndex={0} className="btn m-1">Hover</label>
                                     <ul tabIndex={0} className="dropdown-content menu p-2 shadow bg-base-100 rounded-box w-52">
-                                        <li><a>Item 1</a></li>
-                                        <li><a>Item 2</a></li>
+                                        <li><a>Delete</a></li>
                                     </ul>
                                 </div>
                             </td>
                         </tr>
-                        {/* row 3 */}
                         <tr>
                             <th>3</th>
-                            <td>Brice Swyre</td>
-                            <td>Tax Accountant</td>
-                            <td>Red</td>
+                            <td>Methane</td>
+                            <td>7 , 8</td>
+                            <td>10</td>
                             <td>
                                 <div className="dropdown dropdown-hover">
                                     <label tabIndex={0} className="btn m-1">Hover</label>
                                     <ul tabIndex={0} className="dropdown-content menu p-2 shadow bg-base-100 rounded-box w-52">
-                                        <li><a>Item 1</a></li>
-                                        <li><a>Item 2</a></li>
+                                        <li><a>Delete</a></li>
                                     </ul>
                                 </div>
                             </td>
                         </tr>
                         <tr>
                             <th>4</th>
-                            <td>Brice Swyre</td>
-                            <td>Tax Accountant</td>
-                            <td>Red</td>
+                            <td>Dust</td>
+                            <td>1 , 6</td>
+                            <td>10</td>
                             <td>
                                 <div className="dropdown dropdown-hover">
                                     <label tabIndex={0} className="btn m-1">Hover</label>
                                     <ul tabIndex={0} className="dropdown-content menu p-2 shadow bg-base-100 rounded-box w-52">
-                                        <li><a>Item 1</a></li>
-                                        <li><a>Item 2</a></li>
+                                        <li><a>Delete</a></li>
                                     </ul>
                                 </div>
                             </td>
