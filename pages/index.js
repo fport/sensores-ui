@@ -4,7 +4,7 @@ import Landing from '@c/Landing'
 export default function Home() {
     return (
         <Layout>
-            < Landing />
+            <Landing />
         </Layout>
     )
 }

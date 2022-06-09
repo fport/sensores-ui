@@ -1,0 +1,17 @@
+{
+    "steps": [
+        {
+            "id": 0,
+            "name": "Cords"
+        },
+        {
+            "id": 1,
+            "name": "Radius"
+        },
+        {
+            "id": 2,
+            "name": "Sensor"
+        }
+        
+    ] 
+}
