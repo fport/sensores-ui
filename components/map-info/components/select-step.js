@@ -3,6 +3,7 @@ import {
     Radius,
     Sensor,
     FormCard,
+    SetSensor
 } from './index'
 import Router from 'next/router'
 
@@ -44,7 +45,15 @@ export default function SelectStep(props) {
                         nextFormStep={p.nextFormStep}
                     />
                 )}
-                {p.formStep > 2 && redirectResult()}
+                {p.formStep == 3 && (
+                    <SetSensor
+                        data={p.data}
+                        changeMapInfoData={(node, value) => p.changeMapInfoData(node, value)}
+                        formStep={p.formStep}
+                        nextFormStep={p.nextFormStep}
+                    />
+                )}
+                {p.formStep > 3 && redirectResult()}
             </FormCard>
         </>
     )

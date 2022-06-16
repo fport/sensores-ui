@@ -1,5 +1,16 @@
+import { getSensors } from "../../../redux/actions/sensorAction";
+import { useEffect } from "react";
+import { useDispatch } from "react-redux";
+
+
 export default function Sensor(props) {
     const p = props;
+    const dispatch = useDispatch();
+
+    useEffect(() => {
+        dispatch(getSensors());
+    }, [])
+
     return (
         <div>
             <div className="form-control w-full max-w-xs">
