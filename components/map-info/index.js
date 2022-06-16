@@ -3,8 +3,13 @@ import Stepper from '@c/stepper'
 import Card from '@c/card'
 import { SelectStep } from './components'
 import Router from 'next/router'
+import { useDispatch, useSelector } from "react-redux";
+import { addSensorToMap } from '../../redux/actions/sensorAction'
 
 export default function MapInfo() {
+    const dispatch = useDispatch();
+    const mapInfoData = useSelector((state) => state.mapInfo);
+    const { mapId, loading } = mapInfoData;
     const [formStep, setFormStep] = useState(0);
     const [s, setState] = useState({
         data: {
@@ -28,8 +33,15 @@ export default function MapInfo() {
         })
     }
 
-    const addSensorToMap = () => {
+    const addSensorToMapControl = () => {
         if (s.data.sensorCurrentCount < s.data.sensorCount) {
+            dispatch(addSensorToMap({
+                sensorName: s.data.sensorName,
+                sensorCordX: s.data.sensorCordX,
+                sensorCordY: s.data.sensorCordY,
+                sensorFrekans: s.data.sensorFrekans,
+                mapId: mapId
+            }));
             setState({
                 data: {
                     ...s.data,
@@ -41,7 +53,6 @@ export default function MapInfo() {
                 }
             })
         } else if (s.data.sensorCurrentCount = s.data.sensorCount) {
-            console.log('osman');
             Router.push('/result')
         }
     }
@@ -57,7 +68,7 @@ export default function MapInfo() {
                     formStep={formStep}
                     data={s.data}
                     changeMapInfoData={(node, value) => changeMapInfoData(node, value)}
-                    addSensorToMap={() => addSensorToMap()}
+                    addSensorToMap={() => addSensorToMapControl()}
                     prevFormStep={prevFormStep}
                     nextFormStep={nextFormStep} />
             </Card>
