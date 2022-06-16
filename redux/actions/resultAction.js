@@ -19,7 +19,6 @@ export const getResult = ({ mapId }) => async (dispatch) => {
         }
 
         const { data } = await axios.get(`${process.env.NEXT_PUBLIC_BACKEND_URL}/api/map-sensors/${mapId}`, {}, config)
-        console.log('osman', data);
 
         dispatch({
             type: GET_RESULT_SUCCESS,

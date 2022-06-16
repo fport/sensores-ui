@@ -19,7 +19,6 @@ export default function ResultTable() {
     }, [])
 
     const renderResultTable = () => {
-        console.log('result', result);
         return (
             <div className="overflow-x-auto">
                 <table className="table table-zebra w-full mt-10">
