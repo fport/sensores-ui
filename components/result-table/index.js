@@ -1,24 +1,24 @@
 import { useDispatch, useSelector } from "react-redux";
 import { getResult } from "../../redux/actions/resultAction";
-import { useEffect } from "react";
+import { useEffect, useMemo } from "react";
 import Link from 'next/link'
 
 export default function ResultTable() {
     const dispatch = useDispatch();
     const mapInfoData = useSelector((state) => state.mapInfo);
-    const { mapInfo } = mapInfoData;
+    const { mapId } = mapInfoData;
     const resultData = useSelector((state) => state.result);
     const { result, loading } = resultData;
 
     useEffect(() => {
-        if (mapInfo) {
+        if (mapId) {
             dispatch(getResult({
-                mapId: mapInfo.mapId
+                mapId
             }));
         }
     }, [])
 
-    const renderResultTable = () => {
+    const renderResultTable = useMemo(() => {
         return (
             <div className="overflow-x-auto">
                 <table className="table table-zebra w-full mt-10">
@@ -56,14 +56,14 @@ export default function ResultTable() {
                 </table>
             </div>
         )
-    }
+    }, [result])
 
     return (
         <div>
             {
                 loading
                     ? 'loading'
-                    : renderResultTable()
+                    : renderResultTable
             }
         </div>
     )
