@@ -9,7 +9,7 @@ export default function Layout({ children }) {
                 <Link href='/'>
                     <h1 className="text-primary text-3xl font-semibold cursor-pointer">Sensores App</h1>
                 </Link>
-                <div className='flex items-center justify-center w-full h-[calc(100vh-118px)]'>
+                <div className='flex items-center justify-center w-full h-[calc(100vh-118px)] max-h-[calc(100vh-118px)] overflow-auto '>
                     {children}
                 </div>
                 <Footer />

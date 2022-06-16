@@ -13,7 +13,7 @@ export default function Stepper({ step }) {
         return stepsArr;
     }
     return (
-        <ul className="steps steps-vertical lg:steps-horizontal">
+        <ul className="steps steps-vertical lg:steps-horizontal p-2">
             {renderStep()}
         </ul>
     )

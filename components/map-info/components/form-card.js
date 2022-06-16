@@ -1,6 +1,6 @@
 export default function FormCard({ children, currentStep, prevFormStep, nextFormStep }) {
     return (
-        <div className="flex flex-col items-center justify-between w-full mb-10">
+        <div className="flex flex-col items-center justify-between w-full mb-1">
             {currentStep < 3 && (
                 <div className="flex w-full items-center justify-between">
                     {currentStep > 0 && (
@@ -23,7 +23,7 @@ export default function FormCard({ children, currentStep, prevFormStep, nextForm
                     )} */}
                 </div>
             )}
-            <div className="flex mt-5">
+            <div className="flex mt-5 w-full h-full">
                 {children}
             </div>
         </div>

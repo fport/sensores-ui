@@ -51,6 +51,7 @@ export default function SelectStep(props) {
                         changeMapInfoData={(node, value) => p.changeMapInfoData(node, value)}
                         formStep={p.formStep}
                         nextFormStep={p.nextFormStep}
+                        addSensorToMap={() => p.addSensorToMap()}
                     />
                 )}
                 {p.formStep > 3 && redirectResult()}
