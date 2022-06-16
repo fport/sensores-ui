@@ -6,7 +6,6 @@ import {
 } from './index'
 import Router from 'next/router'
 
-
 export default function SelectStep(props) {
     const p = props;
 
@@ -16,17 +15,35 @@ export default function SelectStep(props) {
 
     return (
         <>
-            <FormCard currentStep={p.formStep} prevFormStep={p.prevFormStep} nextFormStep={p.nextFormStep}>
+            <FormCard
+                currentStep={p.formStep}
+                prevFormStep={p.prevFormStep}
+                nextFormStep={p.nextFormStep}
+            >
                 {p.formStep == 0 && (
-                    <Cords formStep={p.formStep} nextFormStep={p.nextFormStep} />
+                    <Cords
+                        data={p.data}
+                        changeMapInfoData={(node, value) => p.changeMapInfoData(node, value)}
+                        formStep={p.formStep}
+                        nextFormStep={p.nextFormStep}
+                    />
                 )}
                 {p.formStep == 1 && (
-                    <Radius formStep={p.formStep} nextFormStep={p.nextFormStep} />
+                    <Radius
+                        data={p.data}
+                        changeMapInfoData={(node, value) => p.changeMapInfoData(node, value)}
+                        formStep={p.formStep}
+                        nextFormStep={p.nextFormStep}
+                    />
                 )}
                 {p.formStep == 2 && (
-                    <Sensor formStep={p.formStep} nextFormStep={p.nextFormStep} />
+                    <Sensor
+                        data={p.data}
+                        changeMapInfoData={(node, value) => p.changeMapInfoData(node, value)}
+                        formStep={p.formStep}
+                        nextFormStep={p.nextFormStep}
+                    />
                 )}
-
                 {p.formStep > 2 && redirectResult()}
             </FormCard>
         </>

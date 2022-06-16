@@ -1,7 +1,17 @@
 import Link from 'next/link'
 import Card from '@c/card'
 
+import { clearMapId } from "../../redux/actions/mapAction";
+import { useEffect } from "react";
+import { useDispatch } from "react-redux";
+
 export default function Landing() {
+    const dispatch = useDispatch();
+
+    useEffect(() => {
+        dispatch(clearMapId());
+    }, [])
+
     return (
         <Card>
             <div className='flex flex-col ai-between justify-between w-full h-full'>

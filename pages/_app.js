@@ -1,13 +1,14 @@
 import "../styles/globals.css";
 import { SensoresProvider } from '@cx';
-
+import { wrapper, store } from "../redux/store";
+import { Provider } from "react-redux";
 
 function MyApp({ Component, pageProps }) {
   return (
-    <SensoresProvider>
+    <Provider store={store}>
       <Component {...pageProps} />
-    </SensoresProvider>
+    </Provider>
   );
 }
 
-export default MyApp;
+export default wrapper.withRedux(MyApp);

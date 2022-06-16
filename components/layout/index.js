@@ -2,6 +2,7 @@ import Footer from '@c/footer'
 import Link from 'next/link'
 
 export default function Layout({ children }) {
+
     return (
         <>
             <main className="flex flex-col min-h-screen items-center pt-4">

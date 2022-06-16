@@ -1,7 +1,7 @@
 {
     "files.autoSave": "onFocusChange",
     "editor.fontLigatures": true,
-    "editor.wordWrap": "wordWrapColumn",
+    // "editor.wordWrap": "wordWrapColumn",
     "editor.tabSize": 4,
     "prettier.requireConfig": false,
     "prettier.semi": false,

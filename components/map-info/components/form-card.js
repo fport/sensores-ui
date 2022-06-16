@@ -12,7 +12,7 @@ export default function FormCard({ children, currentStep, prevFormStep, nextForm
                             back
                         </button>
                     )}
-                    {currentStep < 3 && (
+                    {/* {currentStep < 3 && (
                         <button
                             className=" btn btn-success btn-xs"
                             onClick={nextFormStep}
@@ -20,7 +20,7 @@ export default function FormCard({ children, currentStep, prevFormStep, nextForm
                         >
                             next
                         </button>
-                    )}
+                    )} */}
                 </div>
             )}
             <div className="flex mt-5">
