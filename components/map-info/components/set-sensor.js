@@ -33,7 +33,7 @@ export default function SetSensor(props) {
                             onChange={(e) => p.changeMapInfoData('sensorName', e.target.value)}
                             value={p.data.sensorName}
                         >
-                            <option disabled selected>Choose a sensor</option>
+                            <option disabled selected value="">Choose a sensor</option>
                             {createSensorOptions()}
                         </select>
                     </div>

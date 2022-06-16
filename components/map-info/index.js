@@ -13,7 +13,7 @@ export default function MapInfo() {
             radius: null,
             sensorCount: 0,
             sensorCurrentCount: 1,
-            sensorName: null,
+            sensorName: "",
             sensorCordX: null,
             sensorCordY: null,
             sensorFrekans: null
@@ -34,7 +34,7 @@ export default function MapInfo() {
                 data: {
                     ...s.data,
                     sensorCurrentCount: s.data.sensorCurrentCount + 1,
-                    sensorName: null,
+                    sensorName: "",
                     sensorCordX: 0,
                     sensorCordY: 0,
                     sensorFrekans: 0
