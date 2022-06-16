@@ -34,7 +34,7 @@ export default function ResultTable() {
                     <tbody>
                         {
                             result?.map((s, i) => (
-                                <tr>
+                                <tr key={i}>
                                     <th>{i + 1}</th>
                                     <Link href={`/result/${s.sensor_adi}`}>
                                         <td className="cursor-pointer">{s.sensor_adi}</td>

@@ -7,7 +7,7 @@ export default function SetSensor(props) {
     const { sensors, loading } = sensorInfoData;
 
     const createSensorOptions = () => {
-        return sensors?.map((sensor, key) => <option value={sensor.sensor_ad}>{sensor.sensor_ad}</option>)
+        return sensors?.map((sensor, key) => <option key={key} value={sensor.sensor_ad}>{sensor.sensor_ad}</option>)
     }
 
     const calcProgress = () => {

@@ -1,6 +1,6 @@
 import Layout from '@c/layout'
 import { useRouter } from 'next/router';
-import { useDispatch, useSelector } from "react-redux";
+import { useSelector } from "react-redux";
 
 export default function SensorDetails() {
     const sensorsData = useSelector((state) => state.sensors);
