@@ -40,7 +40,7 @@ export default function ResultTable() {
                                         <td className="cursor-pointer">{s.sensor_adi}</td>
                                     </Link>
                                     <td>{s.sensor_konum}</td>
-                                    <td>{s.sensor_konum}</td>
+                                    <td>{s.sensor_frekans}</td>
                                     <td>
                                         <div className="dropdown dropdown-hover">
                                             <label tabIndex={0} className="btn m-1">Action</label>

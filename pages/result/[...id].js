@@ -2,7 +2,8 @@ import Layout from '@c/layout'
 import { useRouter } from 'next/router';
 import React from 'react';
 import { useSelector } from "react-redux";
-
+import Router from 'next/router'
+import axios from 'axios';
 
 export default function SensorDetails() {
     const sensorsData = useSelector((state) => state.sensors);
@@ -13,7 +14,7 @@ export default function SensorDetails() {
     const sensorName = router?.asPath?.split('/')[2]
     const selectedSensor = sensors?.find((s) => s.sensor_ad == decodeURI(sensorName))
     const selectedResultSensor = result?.find((s) => s.sensor_adi == decodeURI(sensorName))
-    const [number, setNumber] = React.useState(0);
+    const [number, setNumber] = React.useState(Math.floor(Math.random() * 100 + 1));
 
     // add side effect to component
     React.useEffect(() => {
@@ -23,8 +24,15 @@ export default function SensorDetails() {
 
             const interval = setInterval(
                 // set number every 5s
-                () => setNumber(Math.floor(Math.random() * 100 + 1)),
-                frekans * 1000
+
+                () => {
+                    const val = Math.floor(Math.random() * 100 + 1)
+                    setNumber(val)
+                    axios.post('/api/value', {
+                        value: val,
+                    })
+                }, frekans * 1000
+
             );
 
             // clean up interval on unmount
@@ -44,7 +52,14 @@ export default function SensorDetails() {
                     <span>Sensor Frequency : {selectedResultSensor?.sensor_frekans}</span>
                     <span>Sensor Location : {selectedResultSensor?.sensor_konum}</span>
                     <span>Sensor Value : {number}</span>
+                    <button
+                        className="btn btn-wide mt-5 w-full"
+                        onClick={() => Router.push('/result')}
+                    >
+                        Go to Result
+                    </button>
                 </div>
+
             </div>
         </Layout>
     )
