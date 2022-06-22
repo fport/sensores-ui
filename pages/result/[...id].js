@@ -1,6 +1,8 @@
 import Layout from '@c/layout'
 import { useRouter } from 'next/router';
+import React from 'react';
 import { useSelector } from "react-redux";
+
 
 export default function SensorDetails() {
     const sensorsData = useSelector((state) => state.sensors);
@@ -11,6 +13,26 @@ export default function SensorDetails() {
     const sensorName = router?.asPath?.split('/')[2]
     const selectedSensor = sensors?.find((s) => s.sensor_ad == decodeURI(sensorName))
     const selectedResultSensor = result?.find((s) => s.sensor_adi == decodeURI(sensorName))
+    const [number, setNumber] = React.useState(0);
+
+    // add side effect to component
+    React.useEffect(() => {
+        if (selectedResultSensor.sensor_frekans) {
+            // create interval
+            const frekans = Math.abs(selectedResultSensor.sensor_frekans);
+
+            const interval = setInterval(
+                // set number every 5s
+                () => setNumber(Math.floor(Math.random() * 100 + 1)),
+                frekans * 1000
+            );
+
+            // clean up interval on unmount
+            return () => {
+                clearInterval(interval);
+            };
+        }
+    }, [selectedResultSensor]);
 
     return (
         <Layout>
@@ -21,6 +43,7 @@ export default function SensorDetails() {
                     <span>Sensor Features : {selectedSensor?.sensor_ozellik}</span>
                     <span>Sensor Frequency : {selectedResultSensor?.sensor_frekans}</span>
                     <span>Sensor Location : {selectedResultSensor?.sensor_konum}</span>
+                    <span>Sensor Value : {number}</span>
                 </div>
             </div>
         </Layout>
