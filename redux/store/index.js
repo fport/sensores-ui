@@ -22,8 +22,23 @@ if (typeof window !== 'undefined') {
         ? JSON.parse(localStorage.getItem('mapInfo'))
         : null
 
+    const sensorsFromStorage = localStorage.getItem('sensors')
+        ? JSON.parse(localStorage.getItem('sensors'))
+        : null
+
+    const resultFromStorage = localStorage.getItem('result')
+        ? JSON.parse(localStorage.getItem('result'))
+        : null
+
+    const convertedResultFromStorage = resultFromStorage
+        && resultFromStorage.result
+        && Object.keys(resultFromStorage.result).map(key => resultFromStorage.result[key]);
+    console.log('resultFromStorage', convertedResultFromStorage);
+
     initalState = {
-        mapInfo: { mapInfo: mapInfoFromStorage }
+        mapInfo: { mapInfo: mapInfoFromStorage },
+        sensors: { sensors: sensorsFromStorage },
+        result: { result: convertedResultFromStorage },
     }
 }
 

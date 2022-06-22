@@ -25,11 +25,15 @@ export const getResult = ({ mapId }) => async (dispatch) => {
             payload: data.data
         })
 
+        localStorage.setItem('result', JSON.stringify({
+            'result': { ...data?.data }
+        }))
+
     } catch (error) {
         dispatch({
             type: GET_RESULT_FAIL,
             payload:
-                error.response && error.response.data.message ? error.response.data.message : error.message
+                "oopps"
         })
     }
 }

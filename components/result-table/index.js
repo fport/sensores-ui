@@ -33,7 +33,7 @@ export default function ResultTable() {
                     </thead>
                     <tbody>
                         {
-                            result?.map((s, i) => (
+                            result && result?.map((s, i) => (
                                 <tr key={i}>
                                     <th>{i + 1}</th>
                                     <Link href={`/result/${s.sensor_adi}`}>

@@ -38,7 +38,7 @@ export const createMap = ({ cordX, cordY, radius }) => async (dispatch) => {
         dispatch({
             type: MAP_CREATE_FAIL,
             payload:
-                error.response && error.response.data.message ? error.response.data.message : error.message
+                "oopps"
         })
     }
 }
@@ -49,9 +49,7 @@ export const clearMapId = () => async (dispatch) => {
             type: MAP_CLEAR_REQUEST
         })
 
-        localStorage.setItem('mapInfo', JSON.stringify({
-            'mapId': null
-        }))
+        localStorage.clear()
 
         dispatch({
             type: MAP_CLEAR_SUCCESS,

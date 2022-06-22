@@ -33,7 +33,7 @@ export const getSensors = () => async (dispatch) => {
         dispatch({
             type: GET_SENSORS_FAIL,
             payload:
-                error.response && error.response.data.message ? error.response.data.message : error.message
+                "oopps"
         })
     }
 }
@@ -70,7 +70,7 @@ export const addSensorToMap = ({ sensorName, sensorCordX, sensorCordY, sensorFre
         dispatch({
             type: ADD_SENSOR_TO_MAP_FAIL,
             payload:
-                error.response && error.response.data.message ? error.response.data.message : error.message
+                "oopps"
         })
     }
 }

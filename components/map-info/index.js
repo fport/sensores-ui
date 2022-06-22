@@ -17,7 +17,7 @@ export default function MapInfo() {
             cordY: null,
             radius: null,
             sensorCount: 0,
-            sensorCurrentCount: 1,
+            sensorCurrentCount: 0,
             sensorName: "",
             sensorCordX: null,
             sensorCordY: null,
@@ -34,7 +34,7 @@ export default function MapInfo() {
     }
 
     const addSensorToMapControl = () => {
-        if (s.data.sensorCurrentCount < s.data.sensorCount) {
+        if (s.data.sensorCurrentCount <= parseInt(s.data.sensorCount)) {
             dispatch(addSensorToMap({
                 sensorName: s.data.sensorName,
                 sensorCordX: s.data.sensorCordX,
@@ -52,7 +52,7 @@ export default function MapInfo() {
                     sensorFrekans: 0
                 }
             })
-        } else if (s.data.sensorCurrentCount = s.data.sensorCount) {
+        } else {
             Router.push('/result')
         }
     }

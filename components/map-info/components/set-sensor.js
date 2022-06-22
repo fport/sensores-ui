@@ -1,5 +1,6 @@
 import { useMemo } from "react";
 import { useSelector } from "react-redux";
+import Router from 'next/router'
 
 export default function SetSensor(props) {
     const p = props;
@@ -11,7 +12,8 @@ export default function SetSensor(props) {
     }
 
     const calcProgress = () => {
-        return `${p.data.sensorCurrentCount}/${p.data.sensorCount}`
+        console.log(p.data.sensorCurrentCount, p.data.sensorCount);
+        return `${p.data.sensorCurrentCount + 1}/${p.data.sensorCount}`
     }
 
     const renderForm = useMemo(() => {
@@ -86,9 +88,28 @@ export default function SetSensor(props) {
         )
     }, [p.data])
 
+
+    const pushResult = () => {
+        return <button
+            className="btn btn-wide mt-5 w-full"
+            onClick={() => Router.push('/result')}
+        >
+            Show Result
+        </button>
+    }
+
+    const select = () => {
+        const convertedCurrent = parseInt(p.data.sensorCurrentCount)
+        const convertedTotal = parseInt(p.data.sensorCount)
+
+        const x = parseInt(p.data.sensorCurrentCount) >= parseInt(p.data.sensorCount)
+        console.log(convertedCurrent, convertedTotal, x);
+        return x ? pushResult() : renderForm
+    }
+
     return (
         <>
-            {renderForm}
+            {select()}
         </>
     )
 }
